@@ -63,7 +63,7 @@ class Model implements AdapterInterface, AdapterWithRememberTokenInterface
 
         $rememberToken = $rememberTokenModel->getToken();
 
-        return $rememberToken && hash_equals($rememberToken, $token) && hash_equals(
+        return $rememberToken && hash_equals(
             $rememberTokenModel->getUserAgent(), $user_agent
         ) ? $retrievedModel : null;
     }
